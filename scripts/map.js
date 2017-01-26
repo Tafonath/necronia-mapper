@@ -406,10 +406,11 @@ function baseLayerChange(e){
    layerID = control.getActiveBaseLayer().layer.options.id;
 }
 _hoverTile();
-L.crosshairs().addTo(map);
 L.control.mousePosition().addTo(map);
 //L.control.crosshairPosition().addTo(map);
 
 if(params.x && params.y && params.z && params.zoom){
   map.setView([parseInt(params.y)+1, parseInt(params.x)], parseInt(params.zoom));
 }
+
+L.crosshairs().addTo(map);
