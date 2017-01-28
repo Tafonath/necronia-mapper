@@ -1,3 +1,7 @@
+var map = {}
+
+$(document).ready(function(){
+
 var params = {};
 window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
   params[key] = value;
@@ -47,7 +51,7 @@ var baseLayers = {
 
 if(params.x && params.y && params.z && params.zoom)
 {
-  var map = L.map('map', {
+  map = L.map('map', {
       crs: L.CRS.Simple,
       center: [parseInt(params.y)+1, parseInt(params.x)],
       zoom: 0,
@@ -62,7 +66,7 @@ if(params.x && params.y && params.z && params.zoom)
 }
 else
 {
-  var map = L.map('map', {
+  map = L.map('map', {
       crs: L.CRS.Simple,
       minZoom: -1,
       maxZoom: 4,
@@ -414,3 +418,5 @@ if(params.x && params.y && params.z && params.zoom){
 }
 
 L.crosshairs().addTo(map);
+
+});
