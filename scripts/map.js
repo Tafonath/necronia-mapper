@@ -9,24 +9,24 @@ window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) 
 
 var siteUrl = "http://necronia.gamepedia.com/Mapper";
 
-var bounds = [[0,0], [2048,2048]];
+var bounds = [[0,0], [4096,4096]];
 
-var floor0 = L.imageOverlay('css/images/Floor-00-map.png', bounds, {id:1}),
-    floor1 = L.imageOverlay('css/images/Floor-01-map.png', bounds, {id:2}),
-    floor2 = L.imageOverlay('css/images/Floor-02-map.png', bounds, {id:3}),
-    floor3 = L.imageOverlay('css/images/Floor-03-map.png', bounds, {id:4}),
-    floor4 = L.imageOverlay('css/images/Floor-04-map.png', bounds, {id:5}),
-    floor5 = L.imageOverlay('css/images/Floor-05-map.png', bounds, {id:6}),
-    floor6 = L.imageOverlay('css/images/Floor-06-map.png', bounds, {id:7}),
-    floor7 = L.imageOverlay('css/images/Floor-07-map.png', bounds, {id:8}),
-    floor8 = L.imageOverlay('css/images/Floor-08-map.png', bounds, {id:9}),
-    floor9 = L.imageOverlay('css/images/Floor-09-map.png', bounds, {id:10}),
-    floor10 = L.imageOverlay('css/images/Floor-10-map.png', bounds, {id:11}),
-    floor11 = L.imageOverlay('css/images/Floor-11-map.png', bounds, {id:12}),
-    floor12 = L.imageOverlay('css/images/Floor-12-map.png', bounds, {id:13}),
-    floor13 = L.imageOverlay('css/images/Floor-13-map.png', bounds, {id:14}),
-    floor14 = L.imageOverlay('css/images/Floor-14-map.png', bounds, {id:15}),
-    floor15 = L.imageOverlay('css/images/Floor-15-map.png', bounds, {id:16});
+var floor0 = L.imageOverlay('css/images/nFloor-00-map.png', bounds, {id:1}),
+    floor1 = L.imageOverlay('css/images/nFloor-01-map.png', bounds, {id:2}),
+    floor2 = L.imageOverlay('css/images/nFloor-02-map.png', bounds, {id:3}),
+    floor3 = L.imageOverlay('css/images/nFloor-03-map.png', bounds, {id:4}),
+    floor4 = L.imageOverlay('css/images/nFloor-04-map.png', bounds, {id:5}),
+    floor5 = L.imageOverlay('css/images/nFloor-05-map.png', bounds, {id:6}),
+    floor6 = L.imageOverlay('css/images/nFloor-06-map.png', bounds, {id:7}),
+    floor7 = L.imageOverlay('css/images/nFloor-07-map.png', bounds, {id:8}),
+    floor8 = L.imageOverlay('css/images/nFloor-08-map.png', bounds, {id:9}),
+    floor9 = L.imageOverlay('css/images/nFloor-09-map.png', bounds, {id:10}),
+    floor10 = L.imageOverlay('css/images/nFloor-10-map.png', bounds, {id:11}),
+    floor11 = L.imageOverlay('css/images/nFloor-11-map.png', bounds, {id:12}),
+    floor12 = L.imageOverlay('css/images/nFloor-12-map.png', bounds, {id:13}),
+    floor13 = L.imageOverlay('css/images/nFloor-13-map.png', bounds, {id:14}),
+    floor14 = L.imageOverlay('css/images/nFloor-14-map.png', bounds, {id:15}),
+    floor15 = L.imageOverlay('css/images/nFloor-15-map.png', bounds, {id:16});
 
 var floors = L.layerGroup([floor0, floor1, floor2, floor3, floor4, floor5, floor6, floor7, floor8, floor9, floor10, floor11, floor12, floor13, floor14, floor15]);
 
