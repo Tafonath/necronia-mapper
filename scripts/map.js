@@ -1,7 +1,9 @@
-var map = {}
+
+var map = {} // required to initialize it before doc.ready for mapper to work
 
 $(document).ready(function(){
 
+/* Get params from url */
 var params = {};
 window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
   params[key] = value;
@@ -49,6 +51,111 @@ var baseLayers = {
     "Floor -8": floor15
 };
 
+var IronOres = new L.LayerGroup();
+
+  L.marker([2584.5, 1131.5], {floor:9}).addTo(IronOres), 
+  L.marker([2594.5, 1130.5], {floor:9}).addTo(IronOres),
+  L.marker([2598.5, 1136.5], {floor:9}).addTo(IronOres),
+  L.marker([2592.5, 1163.5], {floor:9}).addTo(IronOres),
+  L.marker([2608.5, 1172.5], {floor:9}).addTo(IronOres),
+  L.marker([2618.5, 1151.5], {floor:9}).addTo(IronOres),
+  L.marker([2618.5, 1139.5], {floor:9}).addTo(IronOres),
+  L.marker([2608.5, 1127.5], {floor:9}).addTo(IronOres),
+  L.marker([2601.5, 1110.5], {floor:9}).addTo(IronOres),
+  L.marker([2596.5, 1116.5], {floor:9}).addTo(IronOres),
+  L.marker([2598.5, 1102.5], {floor:9}).addTo(IronOres),
+  L.marker([2612.5, 1075.5], {floor:9}).addTo(IronOres),
+  L.marker([2581.5, 1099.5], {floor:9}).addTo(IronOres),
+  L.marker([2583.5, 1075.5], {floor:9}).addTo(IronOres),
+  L.marker([2575.5, 1103.5], {floor:9}).addTo(IronOres),
+  L.marker([2572.5, 1117.5], {floor:10}).addTo(IronOres),
+  L.marker([2571.5, 1114.5], {floor:10}).addTo(IronOres),
+  L.marker([2566.5, 1117.5], {floor:10}).addTo(IronOres),
+  L.marker([2559.5, 1125.5], {floor:10}).addTo(IronOres),
+  L.marker([2559.5, 1116.5], {floor:10}).addTo(IronOres),
+  L.marker([2555.5, 1114.5], {floor:10}).addTo(IronOres),
+  L.marker([2562.5, 1113.5], {floor:10}).addTo(IronOres),
+  L.marker([2565.5, 1110.5], {floor:10}).addTo(IronOres),
+  L.marker([2570.5, 1106.5], {floor:10}).addTo(IronOres),
+  L.marker([2568.5, 1097.5], {floor:10}).addTo(IronOres),
+  L.marker([2572.5, 1099.5], {floor:10}).addTo(IronOres),
+  L.marker([2574.5, 1101.5], {floor:10}).addTo(IronOres),
+  L.marker([2582.5, 1105.5], {floor:10}).addTo(IronOres),
+  L.marker([2562.5, 1130.5], {floor:10}).addTo(IronOres),
+  L.marker([2565.5, 1136.5], {floor:10}).addTo(IronOres),
+  L.marker([2603.5, 1136.5], {floor:10}).addTo(IronOres),
+  L.marker([2659.5, 1088.5], {floor:10}).addTo(IronOres),
+  L.marker([2638.5, 1069.5], {floor:10}).addTo(IronOres);
+
+var MetalOres = new L.LayerGroup();
+
+  L.marker([2587.5, 1110.5], {floor:8}).addTo(MetalOres),
+  L.marker([2599.5, 1109.5], {floor:8}).addTo(MetalOres),
+  L.marker([2571.5, 1116.5], {floor:8}).addTo(MetalOres),
+  L.marker([2585.5, 1132.5], {floor:9}).addTo(MetalOres),
+  L.marker([2594.5, 1140.5], {floor:9}).addTo(MetalOres),
+  L.marker([2583.5, 1140.5], {floor:9}).addTo(MetalOres),
+  L.marker([2587.5, 1151.5], {floor:9}).addTo(MetalOres),
+  L.marker([2592.5, 1157.5], {floor:9}).addTo(MetalOres),
+  L.marker([2604.5, 1162.5], {floor:9}).addTo(MetalOres),
+  L.marker([2603.5, 1171.5], {floor:9}).addTo(MetalOres),
+  L.marker([2606.5, 1171.5], {floor:9}).addTo(MetalOres),
+  L.marker([2622.5, 1161.5], {floor:9}).addTo(MetalOres),
+  L.marker([2611.5, 1159.5], {floor:9}).addTo(MetalOres),
+  L.marker([2623.5, 1153.5], {floor:9}).addTo(MetalOres),
+  L.marker([2616.5, 1149.5], {floor:9}).addTo(MetalOres),
+  L.marker([2623.5, 1132.5], {floor:9}).addTo(MetalOres),
+  L.marker([2616.5, 1127.5], {floor:9}).addTo(MetalOres),
+  L.marker([2611.5, 1123.5], {floor:9}).addTo(MetalOres),
+  L.marker([2575.5, 1084.5], {floor:9}).addTo(MetalOres),
+  L.marker([2595.5, 1068.5], {floor:9}).addTo(MetalOres),
+  L.marker([2563.5, 1120.5], {floor:10}).addTo(MetalOres),
+  L.marker([2556.5, 1120.5], {floor:10}).addTo(MetalOres),
+  L.marker([2569.5, 1131.5], {floor:10}).addTo(MetalOres),
+  L.marker([2560.5, 1134.5], {floor:10}).addTo(MetalOres),
+  L.marker([2622.5, 1085.5], {floor:10}).addTo(MetalOres),
+  L.marker([2617.5, 1095.5], {floor:10}).addTo(MetalOres);
+
+var KalemyteOres = new L.LayerGroup();
+
+  L.marker([2553.5, 1131.5], {floor:8}).addTo(KalemyteOres),
+  L.marker([2600.5, 1156.5], {floor:9}).addTo(KalemyteOres),
+  L.marker([2604.5, 1115.5], {floor:9}).addTo(KalemyteOres),
+  L.marker([2604.5, 1116.5], {floor:9}).addTo(KalemyteOres),
+  L.marker([2575.5, 1111.5], {floor:10}).addTo(KalemyteOres),
+  L.marker([2564.5, 1103.5], {floor:10}).addTo(KalemyteOres),
+  L.marker([2567.5, 1125.5], {floor:10}).addTo(KalemyteOres),
+  L.marker([2602.5, 1091.5], {floor:10}).addTo(KalemyteOres),
+  L.marker([2582.5, 1097.5], {floor:10}).addTo(KalemyteOres),
+  L.marker([2582.5, 1098.5], {floor:10}).addTo(KalemyteOres),
+  L.marker([2571.5, 1153.5], {floor:8}).addTo(KalemyteOres);
+
+var BrassOres = new L.LayerGroup();
+   
+  L.marker([2529.5, 1121.5], {floor:8}).addTo(BrassOres),
+  L.marker([2526.5, 1107.5], {floor:8}).addTo(BrassOres),
+  L.marker([2504.5, 1115.5], {floor:8}).addTo(BrassOres),    
+  L.marker([2512.5, 1104.5], {floor:8}).addTo(BrassOres),
+  L.marker([2515.5, 1093.5], {floor:8}).addTo(BrassOres),
+  L.marker([2502.5, 1143.5], {floor:8}).addTo(BrassOres),
+  L.marker([2492.5, 1149.5], {floor:8}).addTo(BrassOres),
+  L.marker([2501.5, 1166.5], {floor:8}).addTo(BrassOres);
+
+var SteelOres = new L.LayerGroup();
+   
+  L.marker([2590.5, 1165.5], {floor:9}).addTo(SteelOres);
+
+var nodes = [IronOres, MetalOres, KalemyteOres, BrassOres, SteelOres];
+var nodesIcons = ["IronOre-marker.png", "MetalOre-marker.png", "KalemyteOre-marker.png", "BrassOre-marker.png", "SteelOre-marker.png"];
+
+var overlayLayers = {
+    "Iron Ores": IronOres,
+    "Metal Ores": MetalOres,
+    "Kalemyte Ores": KalemyteOres,
+    "Brass Ores": BrassOres,
+    "Steel Ores": SteelOres
+};
+
 if(params.x && params.y && params.z && params.zoom)
 {
   map = L.map('map', {
@@ -77,6 +184,8 @@ else
       }
   });
 }
+
+/* Extend control to be able to getActiveBaseLayer */
 
 L.Control.ActiveLayers = L.Control.Layers.extend({
 
@@ -201,6 +310,8 @@ L.control.activeLayers = function (baseLayers, overlays, options) {
   return new L.Control.ActiveLayers(baseLayers, overlays, options)
 }
 
+/* Crosshair */
+
 L.Crosshairs = L.LayerGroup.extend({
         options: {
             style: {
@@ -278,7 +389,9 @@ L.Crosshairs = L.LayerGroup.extend({
                 var r = this._map.project(s);
             }
 
-            $('.url').html(siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=' + layerID + '&zoom=' + this._map.getZoom() + '');
+            $('.wiki_url').html('[' + siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=' + layerID + '&zoom=' + this._map.getZoom() + ' here]');
+            $('.direct_url').html(siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=' + layerID + '&zoom=' + this._map.getZoom() + '');
+            $('.node_url').html('L.marker([' + parseInt(s.lat, 10) + '.5, ' + parseInt(s.lng, 10) + '.5], {floor:' + layerID + '}).addTo(IronOres)');
 
             this.crosshair.longitude_line_north.setLatLngs([this._map.unproject([r.x, r.y]), this._map.unproject([r.x, this._map.getPixelBounds().min.y])]);
             this.crosshair.longitude_line_south.setLatLngs([this._map.unproject([r.x, r.y]), this._map.unproject([r.x, this._map.getPixelBounds().max.y])]);
@@ -291,43 +404,8 @@ L.crosshairs = function (options) {
   return new L.Crosshairs(options)
 }
 
-L.Control.CrosshairPostion = L.Control.extend({
-  options: {
-    position: 'bottomleft',
-    separator: '   ',
-    emptyString: 'Unavailable',
-    lngFirst: false,
-    numDigits: 5,
-    lngFormatter: undefined,
-    latFormatter: undefined,
-    lngPrefix: "<b>X: </b>",
-    latPrefix: "<b>Y: </b>"
-  },
+/* Mouse Coordinates */
 
-  onAdd: function (map) {
-    this._container = L.DomUtil.create('div', 'CrosshairCoordinates');
-    L.DomEvent.disableClickPropagation(this._container);
-    map.on('click', this._onClick, this);
-    this._container.innerHTML=this.options.emptyString;
-    return this._container;
-  },
-
-  onRemove: function (map) {
-    map.on('click', this._onClick)
-  },
-
-  _onClick: function (e) {
-    var value = this.options.lngFirst ? lat + this.options.separator + lng : this.options.lngPrefix + parseInt(crosshair_x, 10) + this.options.separator + this.options.latPrefix + parseInt(crosshair_y,10) + "<b> Z: </b>" + layerID;
-    this._container.innerHTML = value;
-  }
-
-});
-
-L.control.crosshairPosition = function (options) {
-    return new L.Control.CrosshairPostion(options);
-};
-
-// MouseCoordinates
 L.Control.MousePosition = L.Control.extend({
   options: {
     position: 'bottomleft',
@@ -377,6 +455,8 @@ L.control.mousePosition = function (options) {
     return new L.Control.MousePosition(options);
 };
 
+/* Highlight hovered tile/pixel */
+
 function _hoverTile() {
   var map = this.map,
       e = this;
@@ -399,24 +479,56 @@ function _hoverTile() {
   })
 }
 
-//Add things to map
-var control = L.control.activeLayers(baseLayers)
+/* Add things to map */
+
+var control = L.control.activeLayers(baseLayers,overlayLayers)
 control.addTo(map)
 map.fitBounds(bounds);
 
 var layerID = control.getActiveBaseLayer().layer.options.id;
+
 map.on('baselayerchange', baseLayerChange);
 function baseLayerChange(e){
-   layerID = control.getActiveBaseLayer().layer.options.id;
+  layerID = control.getActiveBaseLayer().layer.options.id;
+
+  for (var i = 0; i <= nodes.length - 1; i++) {
+    nodes[i].remove()
+    nodes[i].eachLayer(function (layer) 
+    {
+      if(layer.options.floor != layerID)
+      {
+        layer.remove()
+      }
+    });
+  };
 }
+
+map.on('overlayadd', overlayAdd);
+function overlayAdd(e){
+  e.layer.eachLayer(function (layer) 
+  {
+    if(layer.options.floor != layerID)
+    {
+      layer.remove()
+    }
+    else if ( layer._icon !== 'undefined' || layer._icon !== null)
+    {
+      for (var i = 0; i <= nodes.length - 1; i++) {
+        if(e.layer == nodes[i]){
+          layer._icon.src = "css/images/markers/" + nodesIcons[i];
+        }
+      }
+    }
+  });
+}
+
 _hoverTile();
 L.control.mousePosition().addTo(map);
-//L.control.crosshairPosition().addTo(map);
+
+/* Centers screen on given parameters from url */
 
 if(params.x && params.y && params.z && params.zoom){
   map.setView([parseInt(params.y)+1, parseInt(params.x)], parseInt(params.zoom));
 }
-
 L.crosshairs().addTo(map);
-
 });
