@@ -68,6 +68,9 @@ var IronOres = new L.LayerGroup();
   L.marker([2581.5, 1099.5], {floor:9}).addTo(IronOres),
   L.marker([2583.5, 1075.5], {floor:9}).addTo(IronOres),
   L.marker([2575.5, 1103.5], {floor:9}).addTo(IronOres),
+  L.marker([2505.5, 1255.5], {floor:9}).addTo(IronOres),
+  L.marker([2507.5, 1232.5], {floor:9}).addTo(IronOres),
+  L.marker([2601.5, 1082.5], {floor:9}).addTo(IronOres),
   L.marker([2572.5, 1117.5], {floor:10}).addTo(IronOres),
   L.marker([2571.5, 1114.5], {floor:10}).addTo(IronOres),
   L.marker([2566.5, 1117.5], {floor:10}).addTo(IronOres),
@@ -85,13 +88,21 @@ var IronOres = new L.LayerGroup();
   L.marker([2565.5, 1136.5], {floor:10}).addTo(IronOres),
   L.marker([2603.5, 1136.5], {floor:10}).addTo(IronOres),
   L.marker([2659.5, 1088.5], {floor:10}).addTo(IronOres),
-  L.marker([2638.5, 1069.5], {floor:10}).addTo(IronOres);
+  L.marker([2638.5, 1069.5], {floor:10}).addTo(IronOres),
+  L.marker([2583.5, 1112.5], {floor:10}).addTo(IronOres),
+  L.marker([2601.5, 1104.5], {floor:10}).addTo(IronOres),
+  L.marker([2645.5, 1085.5], {floor:10}).addTo(IronOres),
+  L.marker([2632.5, 1079.5], {floor:11}).addTo(IronOres),
+  L.marker([2658.5, 1100.5], {floor:12}).addTo(IronOres);
 
 var MetalOres = new L.LayerGroup();
 
   L.marker([2587.5, 1110.5], {floor:8}).addTo(MetalOres),
   L.marker([2599.5, 1109.5], {floor:8}).addTo(MetalOres),
   L.marker([2571.5, 1116.5], {floor:8}).addTo(MetalOres),
+  L.marker([2554.5, 1231.5], {floor:8}).addTo(MetalOres),
+  L.marker([2574.5, 1202.5], {floor:8}).addTo(MetalOres),
+  L.marker([2580.5, 1214.5], {floor:8}).addTo(MetalOres),
   L.marker([2585.5, 1132.5], {floor:9}).addTo(MetalOres),
   L.marker([2594.5, 1140.5], {floor:9}).addTo(MetalOres),
   L.marker([2583.5, 1140.5], {floor:9}).addTo(MetalOres),
@@ -109,26 +120,44 @@ var MetalOres = new L.LayerGroup();
   L.marker([2611.5, 1123.5], {floor:9}).addTo(MetalOres),
   L.marker([2575.5, 1084.5], {floor:9}).addTo(MetalOres),
   L.marker([2595.5, 1068.5], {floor:9}).addTo(MetalOres),
+  L.marker([2499.5, 1251.5], {floor:9}).addTo(MetalOres),
+  L.marker([2551.5, 1208.5], {floor:9}).addTo(MetalOres),
   L.marker([2563.5, 1120.5], {floor:10}).addTo(MetalOres),
   L.marker([2556.5, 1120.5], {floor:10}).addTo(MetalOres),
   L.marker([2569.5, 1131.5], {floor:10}).addTo(MetalOres),
   L.marker([2560.5, 1134.5], {floor:10}).addTo(MetalOres),
   L.marker([2622.5, 1085.5], {floor:10}).addTo(MetalOres),
-  L.marker([2617.5, 1095.5], {floor:10}).addTo(MetalOres);
+  L.marker([2617.5, 1095.5], {floor:10}).addTo(MetalOres),
+  L.marker([2616.5, 1075.5], {floor:10}).addTo(MetalOres),
+  L.marker([2595.5, 1064.5], {floor:10}).addTo(MetalOres),
+  L.marker([2642.5, 1090.5], {floor:11}).addTo(MetalOres);
 
 var KalemyteOres = new L.LayerGroup();
-
+  
+  L.marker([2576.5, 1185.5], {floor:7}).addTo(KalemyteOres),
+  L.marker([2576.5, 1186.5], {floor:7}).addTo(KalemyteOres),
+  L.marker([2532.5, 1187.5], {floor:8}).addTo(KalemyteOres),
+  L.marker([2518.5, 1180.5], {floor:8}).addTo(KalemyteOres),
+  L.marker([2515.5, 1181.5], {floor:8}).addTo(KalemyteOres),
+  L.marker([2515.5, 1182.5], {floor:8}).addTo(KalemyteOres),
+  L.marker([2508.5, 1192.5], {floor:8}).addTo(KalemyteOres),
+  L.marker([2548.5, 1215.5], {floor:8}).addTo(KalemyteOres),
+  L.marker([2533.5, 1217.5], {floor:8}).addTo(KalemyteOres),
+  L.marker([2528.5, 1224.5], {floor:8}).addTo(KalemyteOres),
   L.marker([2553.5, 1131.5], {floor:8}).addTo(KalemyteOres),
+  L.marker([2571.5, 1153.5], {floor:8}).addTo(KalemyteOres),
   L.marker([2600.5, 1156.5], {floor:9}).addTo(KalemyteOres),
   L.marker([2604.5, 1115.5], {floor:9}).addTo(KalemyteOres),
   L.marker([2604.5, 1116.5], {floor:9}).addTo(KalemyteOres),
+  L.marker([2504.5, 1116.5], {floor:9}).addTo(KalemyteOres),
   L.marker([2575.5, 1111.5], {floor:10}).addTo(KalemyteOres),
   L.marker([2564.5, 1103.5], {floor:10}).addTo(KalemyteOres),
   L.marker([2567.5, 1125.5], {floor:10}).addTo(KalemyteOres),
   L.marker([2602.5, 1091.5], {floor:10}).addTo(KalemyteOres),
   L.marker([2582.5, 1097.5], {floor:10}).addTo(KalemyteOres),
   L.marker([2582.5, 1098.5], {floor:10}).addTo(KalemyteOres),
-  L.marker([2571.5, 1153.5], {floor:8}).addTo(KalemyteOres);
+  L.marker([2600.5, 1166.5], {floor:10}).addTo(KalemyteOres);
+
 
 var BrassOres = new L.LayerGroup();
    
@@ -139,21 +168,109 @@ var BrassOres = new L.LayerGroup();
   L.marker([2515.5, 1093.5], {floor:8}).addTo(BrassOres),
   L.marker([2502.5, 1143.5], {floor:8}).addTo(BrassOres),
   L.marker([2492.5, 1149.5], {floor:8}).addTo(BrassOres),
-  L.marker([2501.5, 1166.5], {floor:8}).addTo(BrassOres);
+  L.marker([2501.5, 1166.5], {floor:8}).addTo(BrassOres),
+  L.marker([2521.5, 1190.5], {floor:8}).addTo(BrassOres),
+  L.marker([2568.5, 1235.5], {floor:8}).addTo(BrassOres),
+  L.marker([2554.5, 1244.5], {floor:8}).addTo(BrassOres),
+  L.marker([2547.5, 1269.5], {floor:8}).addTo(BrassOres),
+  L.marker([2547.5, 1264.5], {floor:8}).addTo(BrassOres),
+  L.marker([2484.5, 1273.5], {floor:9}).addTo(BrassOres),
+  L.marker([2490.5, 1271.5], {floor:9}).addTo(BrassOres),
+  L.marker([2495.5, 1252.5], {floor:9}).addTo(BrassOres),
+  L.marker([2639.5, 1095.5], {floor:10}).addTo(BrassOres);
 
 var SteelOres = new L.LayerGroup();
    
-  L.marker([2590.5, 1165.5], {floor:9}).addTo(SteelOres);
+  L.marker([2590.5, 1165.5], {floor:9}).addTo(SteelOres),
+  L.marker([2499.5, 1258.5], {floor:9}).addTo(SteelOres),
+  L.marker([2491.5, 1265.5], {floor:9}).addTo(SteelOres),
+  L.marker([2491.5, 1266.5], {floor:9}).addTo(SteelOres),
+  L.marker([2490.5, 1266.5], {floor:9}).addTo(SteelOres),
+  L.marker([2490.5, 1265.5], {floor:9}).addTo(SteelOres),
+  L.marker([2544.5, 1095.5], {floor:9}).addTo(SteelOres),
+  L.marker([2545.5, 1107.5], {floor:9}).addTo(SteelOres),
+  L.marker([2532.5, 1111.5], {floor:9}).addTo(SteelOres),
+  L.marker([2516.5, 1100.5], {floor:9}).addTo(SteelOres),
+  L.marker([2507.5, 1087.5], {floor:9}).addTo(SteelOres),
+  L.marker([2512.5, 1123.5], {floor:9}).addTo(SteelOres),
+  L.marker([2587.5, 1227.5], {floor:9}).addTo(SteelOres),
+  L.marker([2587.5, 1228.5], {floor:9}).addTo(SteelOres),
+  L.marker([2588.5, 1228.5], {floor:9}).addTo(SteelOres),
+  L.marker([2569.5, 1241.5], {floor:9}).addTo(SteelOres),
+  L.marker([2560.5, 1219.5], {floor:9}).addTo(SteelOres),
+  L.marker([2566.5, 1206.5], {floor:9}).addTo(SteelOres),
+  L.marker([2575.5, 1199.5], {floor:9}).addTo(SteelOres),
+  L.marker([2587.5, 1178.5], {floor:10}).addTo(SteelOres);
 
-var nodes = [IronOres, MetalOres, KalemyteOres, BrassOres, SteelOres];
-var nodesIcons = ["IronOre-marker.png", "MetalOre-marker.png", "KalemyteOre-marker.png", "BrassOre-marker.png", "SteelOre-marker.png"];
+var SilverineOres = new L.LayerGroup();
+
+  L.marker([2452.5, 1287.5], {floor:6}).addTo(SilverineOres),
+  L.marker([2452.5, 1288.5], {floor:6}).addTo(SilverineOres),
+  L.marker([2466.5, 1227.5], {floor:7}).addTo(SilverineOres),
+  L.marker([2466.5, 1228.5], {floor:7}).addTo(SilverineOres),
+  L.marker([2443.5, 1211.5], {floor:7}).addTo(SilverineOres),
+  L.marker([2443.5, 1210.5], {floor:7}).addTo(SilverineOres),
+  L.marker([2451.5, 1232.5], {floor:7}).addTo(SilverineOres),
+  L.marker([2451.5, 1233.5], {floor:7}).addTo(SilverineOres),
+  L.marker([2438.5, 1260.5], {floor:7}).addTo(SilverineOres),
+  L.marker([2438.5, 1261.5], {floor:7}).addTo(SilverineOres),
+  L.marker([2472.5, 1270.5], {floor:7}).addTo(SilverineOres),
+  L.marker([2472.5, 1271.5], {floor:7}).addTo(SilverineOres),
+  L.marker([2496.5, 1257.5], {floor:7}).addTo(SilverineOres),
+  L.marker([2496.5, 1258.5], {floor:7}).addTo(SilverineOres),
+  L.marker([2500.5, 1293.5], {floor:7}).addTo(SilverineOres),
+  L.marker([2500.5, 1294.5], {floor:7}).addTo(SilverineOres);
+
+var TarniteOres = new L.LayerGroup();
+
+  L.marker([2557.5, 1192.5], {floor:8}).addTo(TarniteOres),
+  L.marker([2548.5, 1199.5], {floor:8}).addTo(TarniteOres),
+  L.marker([2539.5, 1188.5], {floor:8}).addTo(TarniteOres),
+  L.marker([2543.5, 1205.5], {floor:8}).addTo(TarniteOres),
+  L.marker([2548.5, 1199.5], {floor:8}).addTo(TarniteOres),
+  L.marker([2545.5, 1211.5], {floor:8}).addTo(TarniteOres),
+  L.marker([2512.5, 1120.5], {floor:9}).addTo(TarniteOres),
+  L.marker([2507.5, 1117.5], {floor:9}).addTo(TarniteOres),
+  L.marker([2583.5, 1225.5], {floor:9}).addTo(TarniteOres),
+  L.marker([2580.5, 1229.5], {floor:9}).addTo(TarniteOres),
+  L.marker([2576.5, 1233.5], {floor:9}).addTo(TarniteOres),
+  L.marker([2569.5, 1224.5], {floor:9}).addTo(TarniteOres),
+  L.marker([2573.5, 1207.5], {floor:9}).addTo(TarniteOres),
+  L.marker([2587.5, 1210.5], {floor:9}).addTo(TarniteOres),
+  L.marker([2593.5, 1199.5], {floor:9}).addTo(TarniteOres),
+  L.marker([2585.5, 1219.5], {floor:10}).addTo(TarniteOres);
+
+var OrichalcumOres = new L.LayerGroup();
+
+  L.marker([2504.5, 1126.5], {floor:9}).addTo(OrichalcumOres),
+  L.marker([2490.5, 1126.5], {floor:9}).addTo(OrichalcumOres),
+  L.marker([2464.5, 1127.5], {floor:9}).addTo(OrichalcumOres),
+  L.marker([2465.5, 1162.5], {floor:9}).addTo(OrichalcumOres),
+  L.marker([2634.5, 1196.5], {floor:9}).addTo(OrichalcumOres),
+  L.marker([2639.5, 1202.5], {floor:9}).addTo(OrichalcumOres),
+  L.marker([2641.5, 1195.5], {floor:9}).addTo(OrichalcumOres),
+  L.marker([2652.5, 1196.5], {floor:9}).addTo(OrichalcumOres),
+  L.marker([2645.5, 1204.5], {floor:9}).addTo(OrichalcumOres);
+
+var QuimpOres = new L.LayerGroup();
+
+  L.marker([2633.5, 1193.5], {floor:9}).addTo(QuimpOres),
+  L.marker([2634.5, 1193.5], {floor:9}).addTo(QuimpOres),
+  L.marker([2634.5, 1194.5], {floor:9}).addTo(QuimpOres);
+
+var nodes = [IronOres, MetalOres, KalemyteOres, BrassOres, SteelOres, SilverineOres, TarniteOres, OrichalcumOres, QuimpOres];
+var nodesIcons = ["IronOre-marker.png", "MetalOre-marker.png", "KalemyteOre-marker.png", "BrassOre-marker.png", "SteelOre-marker.png", "SilverineOre-marker.png", "TarniteOre-marker.png", "OrichalcumOre-marker.png", "QuimpOre-marker.png"];
 
 var overlayLayers = {
     "Iron Ores": IronOres,
     "Metal Ores": MetalOres,
     "Kalemyte Ores": KalemyteOres,
     "Brass Ores": BrassOres,
-    "Steel Ores": SteelOres
+    "Steel Ores": SteelOres,
+    "Silverine Ores": SilverineOres,
+    "Tarnite Ores": TarniteOres,
+    "Orichalcum Ores": OrichalcumOres,
+    "Quimp Ores": QuimpOres
 };
 
 if(params.x && params.y && params.z && params.zoom)
