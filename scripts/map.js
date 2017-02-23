@@ -349,7 +349,7 @@ L.marker([2057.5, 1512.5], {floor:9}).addTo(KalemyteOres),
 L.marker([2053.5, 1532.5], {floor:9}).addTo(KalemyteOres),
 L.marker([2059.5, 1533.5], {floor:9}).addTo(KalemyteOres),
 L.marker([2067.5, 1538.5], {floor:9}).addTo(KalemyteOres),
-L.marker([2054.5, 1547.5], {floor:9}).addTo(KalemyteOres),
+L.marker([2045.5, 1547.5], {floor:9}).addTo(KalemyteOres),
 L.marker([2070.5, 1570.5], {floor:9}).addTo(KalemyteOres),
 L.marker([2079.5, 1568.5], {floor:10}).addTo(KalemyteOres),
 L.marker([2059.5, 1559.5], {floor:10}).addTo(KalemyteOres),
@@ -361,6 +361,7 @@ L.marker([2070.5, 1571.5], {floor:11}).addTo(KalemyteOres),
 L.marker([2070.5, 1570.5], {floor:11}).addTo(KalemyteOres);
     
 L.marker([2070.5, 1564.5], {floor:9}).addTo(TarniteOres),
+L.marker([2086.5, 1569.5], {floor:9}).addTo(TarniteOres),
 L.marker([2078.5, 1573.5], {floor:10}).addTo(TarniteOres),
 L.marker([2059.5, 1576.5], {floor:10}).addTo(TarniteOres),
 L.marker([2055.5, 1562.5], {floor:10}).addTo(TarniteOres),
@@ -714,7 +715,7 @@ L.Crosshairs = L.LayerGroup.extend({
 
             $('.wiki_url').html('[' + siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=' + layerID + '&zoom=' + this._map.getZoom() + ' here]');
             $('.direct_url').html(siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=' + layerID + '&zoom=' + this._map.getZoom() + '');
-            $('.node_url').html('L.marker([' + parseInt(s.lat, 10) + '.5, ' + parseInt(s.lng, 10) + '.5], {floor:' + layerID + '}).addTo(IronOres)');
+            $('.node_url').html('L.marker([' + parseInt(s.lat, 10) + '.5, ' + parseInt(s.lng, 10) + '.5], {floor:' + layerID + '}).addTo(<span id="ore-helper">IronOres</span>)');
 
             this.crosshair.longitude_line_north.setLatLngs([this._map.unproject([r.x, r.y]), this._map.unproject([r.x, this._map.getPixelBounds().min.y])]);
             this.crosshair.longitude_line_south.setLatLngs([this._map.unproject([r.x, r.y]), this._map.unproject([r.x, this._map.getPixelBounds().max.y])]);
@@ -801,6 +802,22 @@ function _hoverTile() {
       }).addTo(map)
   })
 }
+
+/*Ore helper*/
+
+$('.node_url').on('click', '#ore-helper', function(){
+  var x = ['IronOres','MetalOres','KalemyteOres','BrassOres','SteelOres','SilverineOres','TarniteOres','OrichalcumOres','QuimpOres','RubiniteOres'];
+  for(i=0; x.length > i; i++)
+  {
+    if($(this).text() == x[i]){
+      if(typeof x[i+1] == 'undefined'){
+        $(this).html(x[0]);
+      }
+      $(this).html(x[i+1]);
+      break;
+    }
+  }
+});
 
 /* Add things to map */
 
