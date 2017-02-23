@@ -341,8 +341,8 @@ L.marker([2048.5, 1543.5], {floor:10}).addTo(BrassOres),
 L.marker([2065.5, 1569.5], {floor:11}).addTo(BrassOres),
 L.marker([2060.5, 1562.5], {floor:11}).addTo(BrassOres);
 
-L.marker([2045.5, 1584.5], {floor:9}).addTo(KalemyteOres),
-L.marker([2074.5, 1589.5], {floor:9}).addTo(KalemyteOres),
+L.marker([2045.5, 1484.5], {floor:9}).addTo(KalemyteOres),
+L.marker([2074.5, 1489.5], {floor:9}).addTo(KalemyteOres),
 L.marker([2074.5, 1488.5], {floor:9}).addTo(KalemyteOres),
 L.marker([2047.5, 1504.5], {floor:9}).addTo(KalemyteOres),
 L.marker([2057.5, 1512.5], {floor:9}).addTo(KalemyteOres),
@@ -361,7 +361,6 @@ L.marker([2070.5, 1571.5], {floor:11}).addTo(KalemyteOres),
 L.marker([2070.5, 1570.5], {floor:11}).addTo(KalemyteOres);
     
 L.marker([2070.5, 1564.5], {floor:9}).addTo(TarniteOres),
-L.marker([2096.5, 1569.5], {floor:9}).addTo(TarniteOres),
 L.marker([2078.5, 1573.5], {floor:10}).addTo(TarniteOres),
 L.marker([2059.5, 1576.5], {floor:10}).addTo(TarniteOres),
 L.marker([2055.5, 1562.5], {floor:10}).addTo(TarniteOres),
@@ -425,8 +424,8 @@ L.marker([2266.5, 1390.5], {floor:9}).addTo(KalemyteOres),
 L.marker([2253.5, 1365.5], {floor:9}).addTo(KalemyteOres),
 L.marker([2249.5, 1388.5], {floor:9}).addTo(KalemyteOres);
  
-L.marker([2252.5, 1483.5], {floor:8}).addTo(BrassOres),
-L.marker([2252.5, 1482.5], {floor:8}).addTo(BrassOres),
+L.marker([2252.5, 1383.5], {floor:8}).addTo(BrassOres),
+L.marker([2252.5, 1382.5], {floor:8}).addTo(BrassOres),
 L.marker([2253.5, 1383.5], {floor:8}).addTo(BrassOres),
 L.marker([2253.5, 1382.5], {floor:8}).addTo(BrassOres),
 L.marker([2265.5, 1413.5], {floor:8}).addTo(BrassOres),
