@@ -147,7 +147,7 @@ body {
     -ms-animation: cssload-rotate-one 0.95s linear infinite;
     -webkit-animation: cssload-rotate-one 0.95s linear infinite;
     -moz-animation: cssload-rotate-one 0.95s linear infinite;
-    border-bottom: 3px solid rgba(10, 37, 46, 0.99);
+    border-bottom: 3px solid rgb(97, 172, 120);
 }
 
 .cssload-inner.cssload-two {
@@ -158,7 +158,7 @@ body {
     -ms-animation: cssload-rotate-two 0.95s linear infinite;
     -webkit-animation: cssload-rotate-two 0.95s linear infinite;
     -moz-animation: cssload-rotate-two 0.95s linear infinite;
-    border-right: 3px solid rgb(21, 48, 62);
+    border-right: 3px solid rgb(53, 99, 123);
 }
 
 .cssload-inner.cssload-three {
@@ -169,7 +169,7 @@ body {
     -ms-animation: cssload-rotate-three 0.95s linear infinite;
     -webkit-animation: cssload-rotate-three 0.95s linear infinite;
     -moz-animation: cssload-rotate-three 0.95s linear infinite;
-    border-top: 3px solid rgb(10, 29, 40);
+    border-top: 3px solid rgb(191, 244, 234);
 }
 
 @keyframes cssload-rotate-one {
