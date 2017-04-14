@@ -31,8 +31,6 @@ $(document).ready(function () {
     floor14 = L.imageOverlay('css/images/nFloor-14-map.png', bounds, {floor: 14}),
     floor15 = L.imageOverlay('css/images/nFloor-15-map.png', bounds, {floor: 15});
 
-  var floors = L.layerGroup([floor0, floor1, floor2, floor3, floor4, floor5, floor6, floor7, floor8, floor9, floor10, floor11, floor12, floor13, floor14, floor15]);
-
   var baseLayers = {
     "Floor +7": floor0,
     "Floor +6": floor1,
@@ -786,52 +784,35 @@ $(document).ready(function () {
   });
 
   /* Initialize the map */
-  if (params.x && params.y && params.z && params.zoom) {
-    map = L.map('map', {
-      crs: L.CRS.Simple,
-      center: [parseInt(params.y) + 1, parseInt(params.x)],
-      zoom: parseInt(params.zoom),
-      minZoom: -1,
-      maxZoom: 4,
-      //parseInt(params.z)+1 is a 'hack' for leaflet ids starting at 1 and our floor ids starting at 0
-      layers: floors.getLayer(parseInt(params.z) + 1),
-      fullscreenControl: true,
-      fullscreenControlOptions: {
-        position: 'topleft',
-        content: '<i class="fa fa-arrows-alt mapper-fullscreen-fa" aria-hidden="true"></i>'
-      }
-    });
-    currentFloorLevel = params.z;
-    L.control.mousePosition({initialLng: params.x, initialLat: params.y, initialFloor: params.z}).addTo(map);
-    /* Centers screen on given parameters from url */
-    //map.setView([parseInt(params.y) + 1, parseInt(params.x)], parseInt(params.zoom));
-  } else {
-    map = L.map('map', {
-      crs: L.CRS.Simple,
-      minZoom: -1,
-      maxZoom: 4,
-      layers: floor7,
-      fullscreenControl: true,
-      fullscreenControlOptions: {
-        position: 'topleft',
-        content: '<i class="fa fa-arrows-alt mapper-fullscreen-fa" aria-hidden="true"></i>'
-      }
-    });
-    map.fitBounds(bounds);
-    currentFloorLevel = floor7.options.floor;
-    L.control.mousePosition().addTo(map);
-  }
+  map = L.map('map', {
+    crs: L.CRS.Simple,
+    minZoom: -1,
+    maxZoom: 4,
+    layers: floor7,
+    fullscreenControl: true,
+    fullscreenControlOptions: {
+      position: 'topleft',
+      forceSeparateButton: true,
+      content: '<i class="fa fa-arrows-alt mapper-fullscreen-fa" aria-hidden="true"></i>'
+    }
+  });
 
-  /* Add things to map */
-  var layers = L.control.activeLayers(baseLayers, overlayLayers);
-  layers.addTo(map);
-
-  //currentFloorLevel = layers.getActiveBaseLayer().layer.options.floor;
-
-  map.on('baselayerchange', baseLayerChange);
-  function baseLayerChange() {
-    currentFloorLevel = layers.getActiveBaseLayer().layer.options.floor;
-
+  map.on('load', function () {
+    console.log('a')
+    $('.cssload-loader').addClass('hidden');
+  });
+  var floors = [floor0, floor1, floor2, floor3, floor4, floor5, floor6, floor7, floor8, floor9, floor10, floor11, floor12, floor13, floor14, floor15];
+  var $floorImageOverlays = $();
+  $.each(floors, function () {
+    $floorImageOverlays = $floorImageOverlays.add(this);
+  });
+  $floorImageOverlays.on('load', function () {
+    console.log('a')
+    $('.cssload-loader').addClass('hidden');
+  });
+  map.on('baselayerchange', function () {
+    currentFloorLevel = floorLayers.getActiveBaseLayer().layer.options.floor;
+    $('.cssload-loader').removeClass('hidden');
     for (var i = 0; i <= nodes.length - 1; i++) {
       nodes[i].remove();
       nodes[i].eachLayer(function (layer) {
@@ -840,10 +821,8 @@ $(document).ready(function () {
         }
       });
     }
-  }
-
-  map.on('overlayadd', overlayAdd);
-  function overlayAdd(e) {
+  });
+  map.on('overlayadd', function (e) {
     e.layer.eachLayer(function (layer) {
       if (layer.options.floor != currentFloorLevel) {
         layer.remove()
@@ -856,7 +835,22 @@ $(document).ready(function () {
         }
       }
     });
+  });
+
+  if (params.x && params.y && params.z && params.zoom) {
+    currentFloorLevel = params.z;
+    L.control.mousePosition({initialLng: params.x, initialLat: params.y, initialFloor: params.z}).addTo(map);
+    /* Centers screen on given parameters from url */
+    map.setView([parseInt(params.y) + 1, parseInt(params.x)], parseInt(params.zoom));
+  } else {
+    map.fitBounds(bounds);
+    currentFloorLevel = floor7.options.floor;
+    L.control.mousePosition().addTo(map);
   }
+
+  /* Add things to map */
+  var floorLayers = L.control.activeLayers(baseLayers, overlayLayers);
+  floorLayers.addTo(map);
 
   _hoverTile(map);
   L.crosshairs().addTo(map);
