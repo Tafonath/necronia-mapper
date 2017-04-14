@@ -12,22 +12,24 @@ $(document).ready(function () {
 
   var bounds = [[0, 0], [4096, 4096]];
 
-  var floor0 = L.imageOverlay('css/images/nFloor-00-map.png', bounds, {id: 0}),
-    floor1 = L.imageOverlay('css/images/nFloor-01-map.png', bounds, {id: 1}),
-    floor2 = L.imageOverlay('css/images/nFloor-02-map.png', bounds, {id: 2}),
-    floor3 = L.imageOverlay('css/images/nFloor-03-map.png', bounds, {id: 3}),
-    floor4 = L.imageOverlay('css/images/nFloor-04-map.png', bounds, {id: 4}),
-    floor5 = L.imageOverlay('css/images/nFloor-05-map.png', bounds, {id: 5}),
-    floor6 = L.imageOverlay('css/images/nFloor-06-map.png', bounds, {id: 6}),
-    floor7 = L.imageOverlay('css/images/nFloor-07-map.png', bounds, {id: 7}),
-    floor8 = L.imageOverlay('css/images/nFloor-08-map.png', bounds, {id: 8}),
-    floor9 = L.imageOverlay('css/images/nFloor-09-map.png', bounds, {id: 9}),
-    floor10 = L.imageOverlay('css/images/nFloor-10-map.png', bounds, {id: 10}),
-    floor11 = L.imageOverlay('css/images/nFloor-11-map.png', bounds, {id: 11}),
-    floor12 = L.imageOverlay('css/images/nFloor-12-map.png', bounds, {id: 12}),
-    floor13 = L.imageOverlay('css/images/nFloor-13-map.png', bounds, {id: 13}),
-    floor14 = L.imageOverlay('css/images/nFloor-14-map.png', bounds, {id: 14}),
-    floor15 = L.imageOverlay('css/images/nFloor-15-map.png', bounds, {id: 15});
+  var currentFloorLevel = {}
+
+  var floor0 = L.imageOverlay('css/images/nFloor-00-map.png', bounds, {floor: 0}),
+    floor1 = L.imageOverlay('css/images/nFloor-01-map.png', bounds, {floor: 1}),
+    floor2 = L.imageOverlay('css/images/nFloor-02-map.png', bounds, {floor: 2}),
+    floor3 = L.imageOverlay('css/images/nFloor-03-map.png', bounds, {floor: 3}),
+    floor4 = L.imageOverlay('css/images/nFloor-04-map.png', bounds, {floor: 4}),
+    floor5 = L.imageOverlay('css/images/nFloor-05-map.png', bounds, {floor: 5}),
+    floor6 = L.imageOverlay('css/images/nFloor-06-map.png', bounds, {floor: 6}),
+    floor7 = L.imageOverlay('css/images/nFloor-07-map.png', bounds, {floor: 7}),
+    floor8 = L.imageOverlay('css/images/nFloor-08-map.png', bounds, {floor: 8}),
+    floor9 = L.imageOverlay('css/images/nFloor-09-map.png', bounds, {floor: 9}),
+    floor10 = L.imageOverlay('css/images/nFloor-10-map.png', bounds, {floor: 10}),
+    floor11 = L.imageOverlay('css/images/nFloor-11-map.png', bounds, {floor: 11}),
+    floor12 = L.imageOverlay('css/images/nFloor-12-map.png', bounds, {floor: 12}),
+    floor13 = L.imageOverlay('css/images/nFloor-13-map.png', bounds, {floor: 13}),
+    floor14 = L.imageOverlay('css/images/nFloor-14-map.png', bounds, {floor: 14}),
+    floor15 = L.imageOverlay('css/images/nFloor-15-map.png', bounds, {floor: 15});
 
   var floors = L.layerGroup([floor0, floor1, floor2, floor3, floor4, floor5, floor6, floor7, floor8, floor9, floor10, floor11, floor12, floor13, floor14, floor15]);
 
@@ -479,38 +481,7 @@ $(document).ready(function () {
     "Rubinite Ores": RubiniteOres
   };
 
-  if (params.x && params.y && params.z && params.zoom) {
-    map = L.map('map', {
-      crs: L.CRS.Simple,
-      center: [parseInt(params.y) + 1, parseInt(params.x)],
-      zoom: 0,
-      minZoom: -1,
-      maxZoom: 4,
-      //parseInt(params.z)+1 is a 'hack' for leaflet ids starting at 1 and our floor ids starting at 0
-      layers: floors.getLayer(parseInt(params.z) + 1),
-      fullscreenControl: true,
-      fullscreenControlOptions: {
-        position: 'topleft',
-        content: '<i class="fa fa-arrows-alt mapper-fullscreen-fa" aria-hidden="true"></i>'
-      }
-    });
-  }
-  else {
-    map = L.map('map', {
-      crs: L.CRS.Simple,
-      minZoom: -1,
-      maxZoom: 4,
-      layers: floor7,
-      fullscreenControl: true,
-      fullscreenControlOptions: {
-        position: 'topleft',
-        content: '<i class="fa fa-arrows-alt mapper-fullscreen-fa" aria-hidden="true"></i>'
-      }
-    });
-  }
-
   /* Extend control to be able to getActiveBaseLayer */
-
   L.Control.ActiveLayers = L.Control.Layers.extend({
 
     getActiveBaseLayer: function () {
@@ -635,7 +606,6 @@ $(document).ready(function () {
   }
 
   /* Crosshair */
-
   L.Crosshairs = L.LayerGroup.extend({
     options: {
       style: {
@@ -714,9 +684,9 @@ $(document).ready(function () {
         var r = this._map.project(s);
       }
 
-      $('.wiki_url').html('[' + siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=' + layerID + '&zoom=' + this._map.getZoom() + ' here]');
-      $('.direct_url').html(siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=' + layerID + '&zoom=' + this._map.getZoom() + '');
-      $('.node_url').html('L.marker([' + parseInt(s.lat, 10) + '.5, ' + parseInt(s.lng, 10) + '.5], {floor:' + layerID + '}).addTo(<span id="ore-helper">IronOres</span>)');
+      $('.wiki_url').html('[' + siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=' + currentFloorLevel + '&zoom=' + this._map.getZoom() + ' here]');
+      $('.direct_url').html(siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=' + currentFloorLevel + '&zoom=' + this._map.getZoom() + '');
+      $('.node_url').html('L.marker([' + parseInt(s.lat, 10) + '.5, ' + parseInt(s.lng, 10) + '.5], {floor:' + currentFloorLevel + '}).addTo(<span id="ore-helper">IronOres</span>)');
 
       this.crosshair.longitude_line_north.setLatLngs([this._map.unproject([r.x, r.y]), this._map.unproject([r.x, this._map.getPixelBounds().min.y])]);
       this.crosshair.longitude_line_south.setLatLngs([this._map.unproject([r.x, r.y]), this._map.unproject([r.x, this._map.getPixelBounds().max.y])]);
@@ -730,18 +700,17 @@ $(document).ready(function () {
   }
 
   /* Mouse Coordinates */
-
   L.Control.MousePosition = L.Control.extend({
     options: {
       position: 'bottomleft',
       separator: '   ',
-      emptyString: 'Unavailable',
       lngFirst: false,
       numDigits: 5,
       lngFormatter: undefined,
       latFormatter: undefined,
-      initialLng: undefined,
-      initialLat: undefined,
+      initialLng: 0,
+      initialLat: 0,
+      initialFloor: 0,
       lngPrefix: "<b>X: </b>",
       latPrefix: "<b>Y: </b>"
     },
@@ -750,7 +719,7 @@ $(document).ready(function () {
       this._container = L.DomUtil.create('div', 'MouseCoordinates');
       L.DomEvent.disableClickPropagation(this._container);
       map.on('mousemove', this._onMouseMove, this);
-      this._container.innerHTML = this.options.initialLng && this.options.initialLat ? this.options.lngPrefix + parseInt(this.options.initialLng, 10) + this.options.separator + this.options.latPrefix + parseInt(this.options.initialLat, 10) + "<b> Z: </b>" + layerID : this.options.emptyString;
+      this._container.innerHTML = this.options.lngPrefix + parseInt(this.options.initialLng, 10) + this.options.separator + this.options.latPrefix + parseInt(this.options.initialLat, 10) + "<b> Z: </b>" + currentFloorLevel;
       return this._container;
     },
 
@@ -761,9 +730,8 @@ $(document).ready(function () {
     _onMouseMove: function (e) {
       var lng = this.options.lngFormatter ? this.options.lngFormatter(e.latlng.lng) : L.Util.formatNum(e.latlng.lng, this.options.numDigits); // x
       var lat = this.options.latFormatter ? this.options.latFormatter(e.latlng.lat) : L.Util.formatNum(e.latlng.lat, this.options.numDigits); // y
-      this._container.innerHTML = this.options.lngFirst ? lat + this.options.separator + lng : this.options.lngPrefix + parseInt(lng, 10) + this.options.separator + this.options.latPrefix + parseInt(lat, 10) + "<b> Z: </b>" + layerID;
+      this._container.innerHTML = this.options.lngPrefix + parseInt(lng, 10) + this.options.separator + this.options.latPrefix + parseInt(lat, 10) + "<b> Z: </b>" + currentFloorLevel;
     }
-
   });
 
   L.Map.mergeOptions({
@@ -782,7 +750,6 @@ $(document).ready(function () {
   };
 
   /* Highlight hovered tile/pixel */
-
   function _hoverTile(map) {
     map.on("mouseout", function () {
       this.hoverTile.setBounds([
@@ -805,7 +772,6 @@ $(document).ready(function () {
   }
 
   /*Ore helper*/
-
   $('.node_url').on('click', '#ore-helper', function () {
     var x = ['IronOres', 'MetalOres', 'KalemyteOres', 'BrassOres', 'SteelOres', 'SilverineOres', 'TarniteOres', 'OrichalcumOres', 'QuimpOres', 'RubiniteOres'];
     for (var i = 0; x.length > i; i++) {
@@ -819,22 +785,57 @@ $(document).ready(function () {
     }
   });
 
-  /* Add things to map */
+  /* Initialize the map */
+  if (params.x && params.y && params.z && params.zoom) {
+    map = L.map('map', {
+      crs: L.CRS.Simple,
+      center: [parseInt(params.y) + 1, parseInt(params.x)],
+      zoom: parseInt(params.zoom),
+      minZoom: -1,
+      maxZoom: 4,
+      //parseInt(params.z)+1 is a 'hack' for leaflet ids starting at 1 and our floor ids starting at 0
+      layers: floors.getLayer(parseInt(params.z) + 1),
+      fullscreenControl: true,
+      fullscreenControlOptions: {
+        position: 'topleft',
+        content: '<i class="fa fa-arrows-alt mapper-fullscreen-fa" aria-hidden="true"></i>'
+      }
+    });
+    currentFloorLevel = params.z;
+    L.control.mousePosition({initialLng: params.x, initialLat: params.y, initialFloor: params.z}).addTo(map);
+    /* Centers screen on given parameters from url */
+    //map.setView([parseInt(params.y) + 1, parseInt(params.x)], parseInt(params.zoom));
+  } else {
+    map = L.map('map', {
+      crs: L.CRS.Simple,
+      minZoom: -1,
+      maxZoom: 4,
+      layers: floor7,
+      fullscreenControl: true,
+      fullscreenControlOptions: {
+        position: 'topleft',
+        content: '<i class="fa fa-arrows-alt mapper-fullscreen-fa" aria-hidden="true"></i>'
+      }
+    });
+    map.fitBounds(bounds);
+    currentFloorLevel = floor7.options.floor;
+    L.control.mousePosition().addTo(map);
+  }
 
+  /* Add things to map */
   var layers = L.control.activeLayers(baseLayers, overlayLayers);
   layers.addTo(map);
-  map.fitBounds(bounds);
 
-  var layerID = layers.getActiveBaseLayer().layer.options.id;
+  //currentFloorLevel = layers.getActiveBaseLayer().layer.options.floor;
 
   map.on('baselayerchange', baseLayerChange);
   function baseLayerChange() {
-    layerID = layers.getActiveBaseLayer().layer.options.id;
+    currentFloorLevel = layers.getActiveBaseLayer().layer.options.floor;
 
     for (var i = 0; i <= nodes.length - 1; i++) {
       nodes[i].remove();
       nodes[i].eachLayer(function (layer) {
-        if (layer.options.floor != layerID) {
+        if (layer.options.floor != currentFloorLevel) {
           layer.remove()
         }
       });
@@ -844,7 +845,7 @@ $(document).ready(function () {
   map.on('overlayadd', overlayAdd);
   function overlayAdd(e) {
     e.layer.eachLayer(function (layer) {
-      if (layer.options.floor != layerID) {
+      if (layer.options.floor != currentFloorLevel) {
         layer.remove()
       }
       else if (layer._icon !== 'undefined' || layer._icon !== null) {
@@ -858,16 +859,5 @@ $(document).ready(function () {
   }
 
   _hoverTile(map);
-  if (params.x && params.y && params.z && params.zoom) {
-    L.control.mousePosition({initialLng: params.x, initialLat: params.y}).addTo(map);
-  } else {
-    L.control.mousePosition().addTo(map);
-  }
-
-  /* Centers screen on given parameters from url */
-
-  if (params.x && params.y && params.z && params.zoom) {
-    map.setView([parseInt(params.y) + 1, parseInt(params.x)], parseInt(params.zoom));
-  }
   L.crosshairs().addTo(map);
 });

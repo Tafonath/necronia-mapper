@@ -4,10 +4,24 @@ body {
     color: white;
 }
 
-#map {
+.map-wrapper {
     margin: auto;
     width: 1280px;
     height: 720px;
+}
+
+.mapper-links {
+    width: inherit;
+    overflow: auto;
+    background: #0b1b31;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px auto auto;
+}
+
+#map {
+    width: inherit;
+    height: inherit;
     image-rendering: crisp-edges;
     image-rendering: optimizeSpeed;
     image-rendering: -moz-crisp-edges;

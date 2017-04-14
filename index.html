@@ -1,34 +1,45 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Mapper</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="external/leaflet/leaflet.css" />
-	<link rel="stylesheet" href="css/main.css" />
-	<script type="text/javascript" src="external/jquery.js"></script>
-	<script src="external/leaflet/leaflet.js"></script>
- 	<script src="external/leaflet/fullscreen/Control.FullScreen.js"></script>
- 	<script type="text/javascript" src="scripts/map.js"></script>
+  <title>Mapper</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="external/leaflet/leaflet.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <script type="text/javascript" src="external/jquery.js"></script>
+  <script src="external/leaflet/leaflet.js"></script>
+  <script src="external/leaflet/fullscreen/Control.FullScreen.js"></script>
+  <script type="text/javascript" src="scripts/map.js"></script>
 </head>
 <body>
-	<div id="map"></div>
-
-	<table style="width: 1280px; overflow: auto; margin: auto; background: #0b1b31; border-radius: 5px; padding: 5px; margin-top: 5px;" border="0">
-		<tr>
-			<td colspan="2" style="border-bottom: 1px solid; font-size: 30px; text-align: center; font-family: SourceSerifPro; border-top: 1px solid; color: #FFD700; background-image: linear-gradient(to right, rgba(41,38,38,0) 0%,rgba(6,21,26,1) 50%,rgba(41,38,38,0) 100%); border-image: linear-gradient(to right, rgba(255,215,0,0) 0%,rgba(255,215,0,1) 50%,rgba(255,215,0,0) 100%); border-image-slice: 2;">Links</td>
-		</tr>
-		<tr>
-			<td>Wiki Link:</td>
-			<td><div class="wiki_url"></div></td>
-		</tr>
-		<tr>
-			<td>Direct Link:</td>
-			<td><div class="direct_url"></div></td>
-		</tr>
-		<tr>
-			<td>Ore Helper:</td>
-			<td><div class="node_url"></div></td>
-		</tr>
-	</table>
+  <div class="map-wrapper">
+    <div id="map"></div>
+    <table class="mapper-links"
+           border="0">
+      <tr>
+        <td colspan="2"
+            style="border-bottom: 1px solid; font-size: 30px; text-align: center; font-family: SourceSerifPro; border-top: 1px solid; color: #FFD700; background-image: linear-gradient(to right, rgba(41,38,38,0) 0%,rgba(6,21,26,1) 50%,rgba(41,38,38,0) 100%); border-image: linear-gradient(to right, rgba(255,215,0,0) 0%,rgba(255,215,0,1) 50%,rgba(255,215,0,0) 100%); border-image-slice: 2;">
+          Links
+        </td>
+      </tr>
+      <tr>
+        <td>Wiki Link:</td>
+        <td>
+          <div class="wiki_url"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Direct Link:</td>
+        <td>
+          <div class="direct_url"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Ore Helper:</td>
+        <td>
+          <div class="node_url"></div>
+        </td>
+      </tr>
+    </table>
+  </div>
 </body>
 </html>
