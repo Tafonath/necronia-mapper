@@ -12,7 +12,11 @@ $(document).ready(function () {
 
   var bounds = [[0, 0], [4096, 4096]];
 
-  var currentFloorLevel = {}
+  var currentFloorLevel = {};
+
+  var loadedFloors = new Set();
+
+  var floorLayers = {};
 
   var floor0 = L.imageOverlay('css/images/nFloor-00-map.png', bounds, {floor: 0}),
     floor1 = L.imageOverlay('css/images/nFloor-01-map.png', bounds, {floor: 1}),
@@ -60,6 +64,26 @@ $(document).ready(function () {
     OrichalcumOres = new L.LayerGroup(),
     QuimpOres = new L.LayerGroup(),
     RubiniteOres = new L.LayerGroup();
+
+  var overlayLayers = {
+    "Iron Ores": IronOres,
+    "Metal Ores": MetalOres,
+    "Kalemyte Ores": KalemyteOres,
+    "Brass Ores": BrassOres,
+    "Steel Ores": SteelOres,
+    "Silverine Ores": SilverineOres,
+    "Tarnite Ores": TarniteOres,
+    "Orichalcum Ores": OrichalcumOres,
+    "Quimp Ores": QuimpOres,
+    "Rubinite Ores": RubiniteOres
+  };
+
+  var nodes = [IronOres, MetalOres, KalemyteOres, BrassOres, SteelOres, SilverineOres, TarniteOres, OrichalcumOres, QuimpOres, RubiniteOres];
+  var nodesIcons = ["IronOre-marker.png", "MetalOre-marker.png", "KalemyteOre-marker.png", "BrassOre-marker.png", "SteelOre-marker.png", "SilverineOre-marker.png", "TarniteOre-marker.png", "OrichalcumOre-marker.png", "QuimpOre-marker.png", "RubiniteOre-marker.png"];
+  var nodesIconsUrls = [];
+  for (var i = 0; i < nodesIcons.length; i++) {
+    nodesIconsUrls.push("css/images/markers/" + nodesIcons[i]);
+  }
 
 ///////////////////////////////////////////////////////////////////
 //                      Markers Bawfuria                         //
@@ -463,22 +487,6 @@ $(document).ready(function () {
   L.marker([2263.5, 1398.5], {floor: 7}).addTo(RubiniteOres);
   L.marker([2282.5, 1404.5], {floor: 6}).addTo(RubiniteOres);
 
-  var nodes = [IronOres, MetalOres, KalemyteOres, BrassOres, SteelOres, SilverineOres, TarniteOres, OrichalcumOres, QuimpOres, RubiniteOres];
-  var nodesIcons = ["IronOre-marker.png", "MetalOre-marker.png", "KalemyteOre-marker.png", "BrassOre-marker.png", "SteelOre-marker.png", "SilverineOre-marker.png", "TarniteOre-marker.png", "OrichalcumOre-marker.png", "QuimpOre-marker.png", "RubiniteOre-marker.png"];
-
-  var overlayLayers = {
-    "Iron Ores": IronOres,
-    "Metal Ores": MetalOres,
-    "Kalemyte Ores": KalemyteOres,
-    "Brass Ores": BrassOres,
-    "Steel Ores": SteelOres,
-    "Silverine Ores": SilverineOres,
-    "Tarnite Ores": TarniteOres,
-    "Orichalcum Ores": OrichalcumOres,
-    "Quimp Ores": QuimpOres,
-    "Rubinite Ores": RubiniteOres
-  };
-
   /* Extend control to be able to getActiveBaseLayer */
   L.Control.ActiveLayers = L.Control.Layers.extend({
 
@@ -797,22 +805,25 @@ $(document).ready(function () {
     }
   });
 
-  map.on('load', function () {
-    console.log('a')
-    $('.cssload-loader').addClass('hidden');
-  });
   var floors = [floor0, floor1, floor2, floor3, floor4, floor5, floor6, floor7, floor8, floor9, floor10, floor11, floor12, floor13, floor14, floor15];
   var $floorImageOverlays = $();
   $.each(floors, function () {
     $floorImageOverlays = $floorImageOverlays.add(this);
   });
   $floorImageOverlays.on('load', function () {
-    console.log('a')
     $('.cssload-loader').addClass('hidden');
   });
-  map.on('baselayerchange', function () {
+  map.on('load', function () {
+    $('.cssload-loader').addClass('hidden');
+    loadedFloors.add(currentFloorLevel);
+
+  });
+  map.on('baselayerchange', function (e) {
     currentFloorLevel = floorLayers.getActiveBaseLayer().layer.options.floor;
-    $('.cssload-loader').removeClass('hidden');
+    if (!loadedFloors.has(currentFloorLevel)) {
+      $('.cssload-loader').removeClass('hidden');
+      loadedFloors.add(currentFloorLevel);
+    }
     for (var i = 0; i <= nodes.length - 1; i++) {
       nodes[i].remove();
       nodes[i].eachLayer(function (layer) {
@@ -830,7 +841,7 @@ $(document).ready(function () {
       else if (layer._icon !== 'undefined' || layer._icon !== null) {
         for (var i = 0; i <= nodes.length - 1; i++) {
           if (e.layer == nodes[i]) {
-            layer._icon.src = "css/images/markers/" + nodesIcons[i];
+            layer._icon.src = nodesIconsUrls[i];
           }
         }
       }
@@ -848,8 +859,9 @@ $(document).ready(function () {
     L.control.mousePosition().addTo(map);
   }
 
-  /* Add things to map */
-  var floorLayers = L.control.activeLayers(baseLayers, overlayLayers);
+  loadedFloors.add(currentFloorLevel);
+
+  floorLayers = L.control.activeLayers(baseLayers, overlayLayers);
   floorLayers.addTo(map);
 
   _hoverTile(map);
