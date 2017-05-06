@@ -692,9 +692,9 @@ $(document).ready(function () {
         var r = this._map.project(s);
       }
 
-      $('.wiki_url').html('[' + siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=' + currentFloorLevel + '&zoom=' + this._map.getZoom() + ' here]');
-      $('.direct_url').html(siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=' + currentFloorLevel + '&zoom=' + this._map.getZoom() + '');
-      $('.node_url').html('L.marker([' + parseInt(s.lat, 10) + '.5, ' + parseInt(s.lng, 10) + '.5], {floor:' + currentFloorLevel + '}).addTo(<span id="ore-helper">IronOres</span>)');
+      $('.wiki_url').html('[' + siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=<span class="currentZ">' + currentFloorLevel + '</span>&zoom=' + this._map.getZoom() + ' here]');
+      $('.direct_url').html(siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=<span class="currentZ">' + currentFloorLevel + '</span>&zoom=' + this._map.getZoom() + '');
+      $('.node_url').html('L.marker([' + parseInt(s.lat, 10) + '.5, ' + parseInt(s.lng, 10) + '.5], {floor:<span class="currentZ">' + currentFloorLevel + '</span>}).addTo(<span id="ore-helper">IronOres</span>)');
 
       this.crosshair.longitude_line_north.setLatLngs([this._map.unproject([r.x, r.y]), this._map.unproject([r.x, this._map.getPixelBounds().min.y])]);
       this.crosshair.longitude_line_south.setLatLngs([this._map.unproject([r.x, r.y]), this._map.unproject([r.x, this._map.getPixelBounds().max.y])]);
@@ -835,6 +835,8 @@ $(document).ready(function () {
         }
       });
     }
+	// reload Z-level in links
+	$('.currentZ').text(currentFloorLevel);
   });
   map.on('overlayadd', function (e) {
     e.layer.eachLayer(function (layer) {
