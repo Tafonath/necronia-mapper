@@ -84,6 +84,8 @@ $(document).ready(function () {
   for (var i = 0; i < nodesIcons.length; i++) {
     nodesIconsUrls.push("css/images/markers/" + nodesIcons[i]);
   }
+  
+  var floorsGroup = L.layerGroup([floor0, floor1, floor2, floor3, floor4, floor5, floor6, floor7, floor8, floor9, floor10, floor11, floor12, floor13, floor14, floor15]);
 
 ///////////////////////////////////////////////////////////////////
 //                      Markers Bawfuria                         //
@@ -690,9 +692,9 @@ $(document).ready(function () {
         var r = this._map.project(s);
       }
 
-      $('.wiki_url').html('[' + siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=' + currentFloorLevel + '&zoom=' + this._map.getZoom() + ' here]');
-      $('.direct_url').html(siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=' + currentFloorLevel + '&zoom=' + this._map.getZoom() + '');
-      $('.node_url').html('L.marker([' + parseInt(s.lat, 10) + '.5, ' + parseInt(s.lng, 10) + '.5], {floor:' + currentFloorLevel + '}).addTo(<span id="ore-helper">IronOres</span>)');
+      $('.wiki_url').html('[' + siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=<span class="currentZ">' + currentFloorLevel + '</span>&zoom=' + this._map.getZoom() + ' here]');
+      $('.direct_url').html(siteUrl + '?x=' + parseInt(s.lng, 10) + '&y=' + parseInt(s.lat, 10) + '&z=<span class="currentZ">' + currentFloorLevel + '</span>&zoom=' + this._map.getZoom() + '');
+      $('.node_url').html('L.marker([' + parseInt(s.lat, 10) + '.5, ' + parseInt(s.lng, 10) + '.5], {floor:<span class="currentZ">' + currentFloorLevel + '</span>}).addTo(<span id="ore-helper">IronOres</span>)');
 
       this.crosshair.longitude_line_north.setLatLngs([this._map.unproject([r.x, r.y]), this._map.unproject([r.x, this._map.getPixelBounds().min.y])]);
       this.crosshair.longitude_line_south.setLatLngs([this._map.unproject([r.x, r.y]), this._map.unproject([r.x, this._map.getPixelBounds().max.y])]);
@@ -796,7 +798,7 @@ $(document).ready(function () {
     crs: L.CRS.Simple,
     minZoom: -1,
     maxZoom: 4,
-    layers: floor7,
+    layers: params.z ? floorsGroup.getLayer(parseInt(params.z)+1) : floor7,
     fullscreenControl: true,
     fullscreenControlOptions: {
       position: 'topleft',
@@ -806,6 +808,7 @@ $(document).ready(function () {
   });
 
   var floors = [floor0, floor1, floor2, floor3, floor4, floor5, floor6, floor7, floor8, floor9, floor10, floor11, floor12, floor13, floor14, floor15];
+  
   var $floorImageOverlays = $();
   $.each(floors, function () {
     $floorImageOverlays = $floorImageOverlays.add(this);
@@ -832,6 +835,8 @@ $(document).ready(function () {
         }
       });
     }
+	// reload Z-level in links
+	$('.currentZ').text(currentFloorLevel);
   });
   map.on('overlayadd', function (e) {
     e.layer.eachLayer(function (layer) {
@@ -849,7 +854,7 @@ $(document).ready(function () {
   });
 
   if (params.x && params.y && params.z && params.zoom) {
-    currentFloorLevel = params.z;
+    currentFloorLevel = parseInt(params.z);
     L.control.mousePosition({initialLng: params.x, initialLat: params.y, initialFloor: params.z}).addTo(map);
     /* Centers screen on given parameters from url */
     map.setView([parseInt(params.y) + 1, parseInt(params.x)], parseInt(params.zoom));
