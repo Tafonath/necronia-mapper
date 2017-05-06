@@ -84,6 +84,8 @@ $(document).ready(function () {
   for (var i = 0; i < nodesIcons.length; i++) {
     nodesIconsUrls.push("css/images/markers/" + nodesIcons[i]);
   }
+  
+  var floorsGroup = L.layerGroup([floor0, floor1, floor2, floor3, floor4, floor5, floor6, floor7, floor8, floor9, floor10, floor11, floor12, floor13, floor14, floor15]);
 
 ///////////////////////////////////////////////////////////////////
 //                      Markers Bawfuria                         //
@@ -796,7 +798,7 @@ $(document).ready(function () {
     crs: L.CRS.Simple,
     minZoom: -1,
     maxZoom: 4,
-    layers: floor7,
+    layers: params.z ? floorsGroup.getLayer(parseInt(params.z)+1) : floor7,
     fullscreenControl: true,
     fullscreenControlOptions: {
       position: 'topleft',
@@ -806,6 +808,7 @@ $(document).ready(function () {
   });
 
   var floors = [floor0, floor1, floor2, floor3, floor4, floor5, floor6, floor7, floor8, floor9, floor10, floor11, floor12, floor13, floor14, floor15];
+  
   var $floorImageOverlays = $();
   $.each(floors, function () {
     $floorImageOverlays = $floorImageOverlays.add(this);
@@ -849,7 +852,7 @@ $(document).ready(function () {
   });
 
   if (params.x && params.y && params.z && params.zoom) {
-    currentFloorLevel = params.z;
+    currentFloorLevel = parseInt(params.z);
     L.control.mousePosition({initialLng: params.x, initialLat: params.y, initialFloor: params.z}).addTo(map);
     /* Centers screen on given parameters from url */
     map.setView([parseInt(params.y) + 1, parseInt(params.x)], parseInt(params.zoom));
