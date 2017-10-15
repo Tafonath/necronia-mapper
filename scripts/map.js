@@ -488,7 +488,197 @@ $(document).ready(function () {
   L.marker([2263.5, 1399.5], {floor: 7}).addTo(RubiniteOres);
   L.marker([2263.5, 1398.5], {floor: 7}).addTo(RubiniteOres);
   L.marker([2282.5, 1404.5], {floor: 6}).addTo(RubiniteOres);
+	
+//////////////////////////////////////////////////////////////////////
+//                     Markers Oiorpata Village                     //
+//////////////////////////////////////////////////////////////////////
+	
+L.marker([2076.5, 1302.5], {floor:10}).addTo(MetalOres)
+L.marker([2070.5, 1319.5], {floor:9}).addTo(MetalOres)
+L.marker([2101.5, 1282.5], {floor:10}).addTo(MetalOres)
+L.marker([2050.5, 1293.5], {floor:8}).addTo(MetalOres)
+L.marker([1975.5, 1345.5], {floor:8}).addTo(MetalOres)
+	
+//////////////////////////////////////////////////////////////////////
+//                   Markers Mt. Mossfloor Surface                  //
+//////////////////////////////////////////////////////////////////////
+	
+L.marker([2009.5, 1180.5], {floor:6}).addTo(KalemyteOres)
+L.marker([2007.5, 1157.5], {floor:6}).addTo(KalemyteOres)	
+L.marker([1996.5, 1160.5], {floor:6}).addTo(KalemyteOres)
+	
+L.marker([1990.5, 1168.5], {floor:6}).addTo(MetalOres)
+L.marker([1986.5, 1180.5], {floor:6}).addTo(MetalOres)
+L.marker([1982.5, 1156.5], {floor:6}).addTo(MetalOres)
+	
+L.marker([1991.5, 1164.5], {floor:6}).addTo(SteelOres)
+L.marker([1990.5, 1165.5], {floor:6}).addTo(SteelOres)
+	
+L.marker([1930.5, 1204.5], {floor:7}).addTo(QuimpOres)
+L.marker([1930.5, 1205.5], {floor:7}).addTo(QuimpOres)
+L.marker([1929.5, 1205.5], {floor:7}).addTo(QuimpOres)
 
+//////////////////////////////////////////////////////////////////////
+//                   Markers Mt. Mossfloor Caverns                  //
+//////////////////////////////////////////////////////////////////////
+	
+L.marker([1959.5, 1200.5], {floor:8}).addTo(MetalOres)
+L.marker([1948.5, 1217.5], {floor:8}).addTo(MetalOres)
+
+L.marker([1965.5, 1219.5], {floor:8}).addTo(TarniteOres)
+L.marker([1971.5, 1232.5], {floor:8}).addTo(TarniteOres)
+L.marker([1976.5, 1217.5], {floor:8}).addTo(TarniteOres)
+L.marker([1967.5, 1209.5], {floor:8}).addTo(TarniteOres)
+L.marker([1963.5, 1199.5], {floor:8}).addTo(TarniteOres)
+L.marker([1961.5, 1189.5], {floor:8}).addTo(TarniteOres)
+L.marker([1957.5, 1224.5], {floor:8}).addTo(TarniteOres)
+L.marker([1946.5, 1211.5], {floor:8}).addTo(TarniteOres)
+L.marker([1937.5, 1229.5], {floor:8}).addTo(TarniteOres)
+L.marker([1919.5, 1236.5], {floor:8}).addTo(TarniteOres)
+L.marker([1935.5, 1213.5], {floor:8}).addTo(TarniteOres)
+L.marker([1937.5, 1195.5], {floor:8}).addTo(TarniteOres)
+L.marker([1943.5, 1194.5], {floor:8}).addTo(TarniteOres)
+L.marker([1941.5, 1176.5], {floor:8}).addTo(TarniteOres)
+L.marker([1946.5, 1160.5], {floor:8}).addTo(TarniteOres)
+L.marker([1932.5, 1182.5], {floor:8}).addTo(TarniteOres)
+L.marker([1921.5, 1166.5], {floor:8}).addTo(TarniteOres)
+L.marker([1925.5, 1152.5], {floor:8}).addTo(TarniteOres)
+L.marker([1917.5, 1198.5], {floor:8}).addTo(TarniteOres)	
+L.marker([1905.5, 1192.5], {floor:8}).addTo(TarniteOres)
+L.marker([1904.5, 1205.5], {floor:8}).addTo(TarniteOres)
+L.marker([1897.5, 1225.5], {floor:8}).addTo(TarniteOres)
+L.marker([1879.5, 1223.5], {floor:8}).addTo(TarniteOres)
+L.marker([1884.5, 1220.5], {floor:9}).addTo(TarniteOres)
+L.marker([1904.5, 1234.5], {floor:9}).addTo(TarniteOres)
+L.marker([1899.5, 1232.5], {floor:9}).addTo(TarniteOres)
+L.marker([1892.5, 1223.5], {floor:9}).addTo(TarniteOres)
+L.marker([1898.5, 1220.5], {floor:9}).addTo(TarniteOres)
+L.marker([1903.5, 1222.5], {floor:9}).addTo(TarniteOres)
+L.marker([1912.5, 1219.5], {floor:9}).addTo(TarniteOres)
+L.marker([1911.5, 1215.5], {floor:9}).addTo(TarniteOres)
+L.marker([1893.5, 1208.5], {floor:9}).addTo(TarniteOres)
+L.marker([1917.5, 1196.5], {floor:9}).addTo(TarniteOres)
+L.marker([1910.5, 1196.5], {floor:9}).addTo(TarniteOres)
+L.marker([1920.5, 1198.5], {floor:9}).addTo(TarniteOres)
+L.marker([1917.5, 1208.5], {floor:9}).addTo(TarniteOres)
+L.marker([1924.5, 1209.5], {floor:9}).addTo(TarniteOres)
+L.marker([1927.5, 1211.5], {floor:9}).addTo(TarniteOres)
+L.marker([1933.5, 1203.5], {floor:9}).addTo(TarniteOres)
+L.marker([1932.5, 1198.5], {floor:9}).addTo(TarniteOres)
+L.marker([1907.5, 1180.5], {floor:9}).addTo(TarniteOres)
+L.marker([1913.5, 1180.5], {floor:9}).addTo(TarniteOres)
+L.marker([1916.5, 1174.5], {floor:9}).addTo(TarniteOres)
+L.marker([1922.5, 1171.5], {floor:9}).addTo(TarniteOres)
+L.marker([1925.5, 1188.5], {floor:9}).addTo(TarniteOres)
+L.marker([1927.5, 1165.5], {floor:9}).addTo(TarniteOres)
+L.marker([1919.5, 1156.5], {floor:9}).addTo(TarniteOres)
+L.marker([1931.5, 1159.5], {floor:9}).addTo(TarniteOres)
+L.marker([1900.5, 1154.5], {floor:9}).addTo(TarniteOres)
+L.marker([1888.5, 1153.5], {floor:9}).addTo(TarniteOres)
+L.marker([1880.5, 1161.5], {floor:9}).addTo(TarniteOres)
+L.marker([1879.5, 1175.5], {floor:9}).addTo(TarniteOres)
+L.marker([1889.5, 1186.5], {floor:9}).addTo(TarniteOres)
+L.marker([1892.5, 1179.5], {floor:9}).addTo(TarniteOres)
+L.marker([1932.5, 1187.5], {floor:9}).addTo(TarniteOres)
+L.marker([1944.5, 1172.5], {floor:9}).addTo(TarniteOres)
+L.marker([1955.5, 1172.5], {floor:9}).addTo(TarniteOres)
+L.marker([1963.5, 1178.5], {floor:9}).addTo(TarniteOres)
+L.marker([1969.5, 1182.5], {floor:9}).addTo(TarniteOres)
+L.marker([1972.5, 1192.5], {floor:9}).addTo(TarniteOres)
+L.marker([1978.5, 1192.5], {floor:9}).addTo(TarniteOres)
+L.marker([1984.5, 1199.5], {floor:9}).addTo(TarniteOres)
+L.marker([1981.5, 1204.5], {floor:9}).addTo(TarniteOres)
+L.marker([1974.5, 1211.5], {floor:9}).addTo(TarniteOres)
+L.marker([1976.5, 1224.5], {floor:9}).addTo(TarniteOres)
+L.marker([1960.5, 1229.5], {floor:9}).addTo(TarniteOres)
+L.marker([1955.5, 1220.5], {floor:9}).addTo(TarniteOres)
+L.marker([1925.5, 1227.5], {floor:9}).addTo(TarniteOres)
+L.marker([1919.5, 1235.5], {floor:9}).addTo(TarniteOres)
+L.marker([1914.5, 1243.5], {floor:9}).addTo(TarniteOres)
+L.marker([1920.5, 1244.5], {floor:9}).addTo(TarniteOres)
+L.marker([1940.5, 1243.5], {floor:9}).addTo(TarniteOres)
+L.marker([1943.5, 1251.5], {floor:9}).addTo(TarniteOres)
+L.marker([1949.5, 1246.5], {floor:9}).addTo(TarniteOres)
+L.marker([1956.5, 1242.5], {floor:9}).addTo(TarniteOres)
+L.marker([1957.5, 1246.5], {floor:9}).addTo(TarniteOres)
+L.marker([1946.5, 1250.5], {floor:9}).addTo(TarniteOres)
+L.marker([1938.5, 1210.5], {floor:9}).addTo(TarniteOres)	
+	
+//////////////////////////////////////////////////////////////////////
+//                  Markers Stinkraw Swamp Surface                  //
+//////////////////////////////////////////////////////////////////////
+	
+L.marker([1996.5, 1417.5], {floor:7}).addTo(MetalOres)
+L.marker([2156.5, 1437.5], {floor:7}).addTo(MetalOres)
+	
+//////////////////////////////////////////////////////////////////////
+//              Markers Stinkraw Swamp Parcigh Hideout              //
+//////////////////////////////////////////////////////////////////////
+	
+L.marker([2100.5, 1392.5], {floor:8}).addTo(SilverineOres)
+L.marker([2100.5, 1393.5], {floor:8}).addTo(SilverineOres)
+	
+//////////////////////////////////////////////////////////////////////
+//                      Markers Dwarven Mines                       //
+//////////////////////////////////////////////////////////////////////
+	
+L.marker([2042.5, 1363.5], {floor:9}).addTo(KalemyteOres)
+L.marker([2056.5, 1378.5], {floor:9}).addTo(KalemyteOres)
+L.marker([2060.5, 1409.5], {floor:9}).addTo(KalemyteOres)
+L.marker([2054.5, 1431.5], {floor:9}).addTo(KalemyteOres)
+L.marker([2076.5, 1424.5], {floor:9}).addTo(KalemyteOres)
+L.marker([2076.5, 1423.5], {floor:9}).addTo(KalemyteOres)
+L.marker([2079.5, 1442.5], {floor:9}).addTo(KalemyteOres)
+L.marker([2079.5, 1441.5], {floor:9}).addTo(KalemyteOres)
+L.marker([2068.5, 1440.5], {floor:10}).addTo(KalemyteOres)
+L.marker([2069.5, 1476.5], {floor:10}).addTo(KalemyteOres)
+L.marker([2078.5, 1453.5], {floor:10}).addTo(KalemyteOres)
+L.marker([2097.5, 1443.5], {floor:10}).addTo(KalemyteOres)
+L.marker([2094.5, 1467.5], {floor:11}).addTo(KalemyteOres)
+L.marker([2104.5, 1450.5], {floor:12}).addTo(KalemyteOres)
+L.marker([2113.5, 1440.5], {floor:13}).addTo(KalemyteOres)
+L.marker([2131.5, 1435.5], {floor:13}).addTo(KalemyteOres)
+L.marker([2129.5, 1466.5], {floor:12}).addTo(KalemyteOres)
+L.marker([2132.5, 1490.5], {floor:11}).addTo(KalemyteOres)
+
+L.marker([2057.5, 1385.5], {floor:9}).addTo(BrassOres)
+L.marker([2057.5, 1384.5], {floor:9}).addTo(BrassOres)
+L.marker([2066.5, 1449.5], {floor:9}).addTo(BrassOres)
+L.marker([2065.5, 1443.5], {floor:10}).addTo(BrassOres)
+L.marker([2065.5, 1444.5], {floor:10}).addTo(BrassOres)
+L.marker([2064.5, 1443.5], {floor:10}).addTo(BrassOres)
+L.marker([2064.5, 1444.5], {floor:10}).addTo(BrassOres)
+L.marker([2075.5, 1464.5], {floor:10}).addTo(BrassOres)
+L.marker([2099.5, 1447.5], {floor:10}).addTo(BrassOres)
+L.marker([2098.5, 1438.5], {floor:12}).addTo(BrassOres)
+L.marker([2098.5, 1437.5], {floor:12}).addTo(BrassOres)
+L.marker([2097.5, 1437.5], {floor:12}).addTo(BrassOres)
+L.marker([2097.5, 1438.5], {floor:12}).addTo(BrassOres)
+L.marker([2126.5, 1490.5], {floor:11}).addTo(BrassOres)
+
+L.marker([2041.5, 1401.5], {floor:9}).addTo(MetalOres)
+L.marker([2062.5, 1422.5], {floor:9}).addTo(MetalOres)
+L.marker([2087.5, 1429.5], {floor:9}).addTo(MetalOres)
+L.marker([2077.5, 1447.5], {floor:9}).addTo(MetalOres)
+L.marker([2067.5, 1455.5], {floor:10}).addTo(MetalOres)
+L.marker([2065.5, 1464.5], {floor:10}).addTo(MetalOres)
+L.marker([2051.5, 1445.5], {floor:10}).addTo(MetalOres)
+L.marker([2061.5, 1435.5], {floor:10}).addTo(MetalOres)
+L.marker([2065.5, 1474.5], {floor:10}).addTo(MetalOres)
+L.marker([2086.5, 1458.5], {floor:10}).addTo(MetalOres)
+L.marker([2085.5, 1446.5], {floor:10}).addTo(MetalOres)
+L.marker([2113.5, 1431.5], {floor:13}).addTo(MetalOres)
+L.marker([2132.5, 1437.5], {floor:13}).addTo(MetalOres)
+L.marker([2137.5, 1464.5], {floor:12}).addTo(MetalOres)
+L.marker([2133.5, 1478.5], {floor:11}).addTo(MetalOres)
+
+L.marker([2059.5, 1458.5], {floor:10}).addTo(SteelOres)
+L.marker([2076.5, 1481.5], {floor:9}).addTo(SteelOres)
+L.marker([2118.5, 1487.5], {floor:11}).addTo(SteelOres)
+
+L.marker([2076.5, 1466.5], {floor:9}).addTo(SilverineOres)
+L.marker([2076.5, 1465.5], {floor:9}).addTo(SilverineOres)
+	
   /* Extend control to be able to getActiveBaseLayer */
   L.Control.ActiveLayers = L.Control.Layers.extend({
 
