@@ -63,7 +63,8 @@ $(document).ready(function () {
     TarniteOres = new L.LayerGroup(),
     OrichalcumOres = new L.LayerGroup(),
     QuimpOres = new L.LayerGroup(),
-    RubiniteOres = new L.LayerGroup();
+    RubiniteOres = new L.LayerGroup(),
+    MordOres = new L.LayerGroup();
 
   var overlayLayers = {
     "Iron Ores": IronOres,
@@ -75,11 +76,12 @@ $(document).ready(function () {
     "Tarnite Ores": TarniteOres,
     "Orichalcum Ores": OrichalcumOres,
     "Quimp Ores": QuimpOres,
-    "Rubinite Ores": RubiniteOres
+    "Rubinite Ores": RubiniteOres,
+    "Mord Ores": MordOres
   };
 
-  var nodes = [IronOres, MetalOres, KalemyteOres, BrassOres, SteelOres, SilverineOres, TarniteOres, OrichalcumOres, QuimpOres, RubiniteOres];
-  var nodesIcons = ["IronOre-marker.png", "MetalOre-marker.png", "KalemyteOre-marker.png", "BrassOre-marker.png", "SteelOre-marker.png", "SilverineOre-marker.png", "TarniteOre-marker.png", "OrichalcumOre-marker.png", "QuimpOre-marker.png", "RubiniteOre-marker.png"];
+  var nodes = [IronOres, MetalOres, KalemyteOres, BrassOres, SteelOres, SilverineOres, TarniteOres, OrichalcumOres, QuimpOres, RubiniteOres, MordOres];
+  var nodesIcons = ["IronOre-marker.png", "MetalOre-marker.png", "KalemyteOre-marker.png", "BrassOre-marker.png", "SteelOre-marker.png", "SilverineOre-marker.png", "TarniteOre-marker.png", "OrichalcumOre-marker.png", "QuimpOre-marker.png", "RubiniteOre-marker.png", "MordOre-marker.png"];
   var nodesIconsUrls = [];
   for (var i = 0; i < nodesIcons.length; i++) {
     nodesIconsUrls.push("css/images/markers/" + nodesIcons[i]);
@@ -167,6 +169,7 @@ $(document).ready(function () {
   L.marker([2616.5, 1075.5], {floor: 9}).addTo(MetalOres);
   L.marker([2595.5, 1064.5], {floor: 9}).addTo(MetalOres);
   L.marker([2642.5, 1090.5], {floor: 10}).addTo(MetalOres);
+  L.marker([1527.5, 1611.5], {floor:6}).addTo(MetalOres)
 
   L.marker([2576.5, 1185.5], {floor: 6}).addTo(KalemyteOres);
   L.marker([2576.5, 1186.5], {floor: 6}).addTo(KalemyteOres);
@@ -678,6 +681,93 @@ L.marker([2118.5, 1487.5], {floor:11}).addTo(SteelOres)
 
 L.marker([2076.5, 1466.5], {floor:9}).addTo(SilverineOres)
 L.marker([2076.5, 1465.5], {floor:9}).addTo(SilverineOres)
+
+/* WRONG POSITIONS
+	
+//////////////////////////////////////////////////////////////////////
+//                  Magmic Isle - beyond Cerberus                   //
+//////////////////////////////////////////////////////////////////////
+
+L.marker([2168.5, 1568.5], {floor:9}).addTo(MordOres)
+L.marker([2167.5, 1568.5], {floor:9}).addTo(MordOres)
+L.marker([2181.5, 1624.5], {floor:9}).addTo(MordOres)
+L.marker([2180.5, 1624.5], {floor:9}).addTo(MordOres)
+L.marker([2138.5, 1616.5], {floor:8}).addTo(MordOres)
+L.marker([2125.5, 1630.5], {floor:7}).addTo(MordOres)
+L.marker([2130.5, 1637.5], {floor:7}).addTo(MordOres)
+L.marker([2157.5, 1636.5], {floor:7}).addTo(MordOres)
+L.marker([2170.5, 1652.5], {floor:7}).addTo(MordOres)
+L.marker([2161.5, 1650.5], {floor:8}).addTo(MordOres)
+L.marker([2169.5, 1673.5], {floor:8}).addTo(MordOres)
+L.marker([2162.5, 1680.5], {floor:8}).addTo(MordOres)
+
+//////////////////////////////////////////////////////////////////////
+//                	     Magmic Isle                            //
+//////////////////////////////////////////////////////////////////////	
+
+L.marker([2211.5, 1765.5], {floor:7}).addTo(MordOres)
+L.marker([2222.5, 1739.5], {floor:7}).addTo(MordOres)
+L.marker([2222.5, 1717.5], {floor:6}).addTo(MordOres)
+L.marker([2220.5, 1711.5], {floor:7}).addTo(MordOres)
+L.marker([2235.5, 1723.5], {floor:6}).addTo(MordOres)
+L.marker([2252.5, 1727.5], {floor:7}).addTo(MordOres)
+L.marker([2191.5, 1680.5], {floor:7}).addTo(MordOres)
+L.marker([2187.5, 1667.5], {floor:7}).addTo(MordOres)
+L.marker([2174.5, 1642.5], {floor:6}).addTo(MordOres)
+L.marker([2172.5, 1631.5], {floor:7}).addTo(MordOres)
+L.marker([2137.5, 1620.5], {floor:7}).addTo(MordOres)
+L.marker([2118.5, 1616.5], {floor:6}).addTo(MordOres)
+L.marker([2095.5, 1638.5], {floor:6}).addTo(MordOres)
+L.marker([2119.5, 1656.5], {floor:6}).addTo(MordOres)
+L.marker([2130.5, 1709.5], {floor:6}).addTo(MordOres)
+L.marker([2156.5, 1714.5], {floor:6}).addTo(MordOres)
+L.marker([2170.5, 1705.5], {floor:7}).addTo(MordOres)
+L.marker([2158.5, 1699.5], {floor:7}).addTo(MordOres)
+L.marker([2157.5, 1695.5], {floor:7}).addTo(MordOres)
+L.marker([2156.5, 1687.5], {floor:7}).addTo(MordOres)
+L.marker([2160.5, 1673.5], {floor:6}).addTo(MordOres)
+L.marker([218-.5, 1655.5], {floor:6}).addTo(MordOres)
+L.marker([2181.5, 1673.5], {floor:7}).addTo(MordOres)
+L.marker([2177.5, 1688.5], {floor:7}).addTo(MordOres)
+L.marker([2175.5, 1690.5], {floor:6}).addTo(MordOres)
+L.marker([2196.5, 1700.5], {floor:6}).addTo(MordOres)
+L.marker([2185.5, 1706.5], {floor:7}).addTo(MordOres)
+
+L.marker([2111.5, 1679.5], {floor:8}).addTo(MordOres)
+L.marker([2105.5, 1671.5], {floor:8}).addTo(MordOres)
+L.marker([2094.5, 1653.5], {floor:8}).addTo(MordOres)
+L.marker([2133.5, 1658.5], {floor:8}).addTo(MordOres)
+L.marker([2140.5, 1664.5], {floor:8}).addTo(MordOres)
+L.marker([2150.5, 1653.5], {floor:8}).addTo(MordOres)
+L.marker([2139.5, 1645.5], {floor:8}).addTo(MordOres)
+L.marker([2137.5, 1599.5], {floor:9}).addTo(MordOres)
+L.marker([2138.5, 1599.5], {floor:9}).addTo(MordOres)
+
+
+//////////////////////////////////////////////////////////////////////
+//                           Raptor Shore                           //
+//////////////////////////////////////////////////////////////////////
+
+L.marker([2238.5, 1595.5], {floor:6}).addTo(MetalOres)
+L.marker([2241.5, 1612.5], {floor:7}).addTo(MetalOres)
+L.marker([2250.5, 1604.5], {floor:7}).addTo(MetalOres)
+L.marker([2233.5, 1620.5], {floor:6}).addTo(MetalOres)
+L.marker([2233.5, 1635.5], {floor:7}).addTo(MetalOres)
+L.marker([2239.5, 1638.5], {floor:7}).addTo(MetalOres)
+L.marker([2247.5, 1635.5], {floor:7}).addTo(MetalOres)
+L.marker([2258.5, 1631.5], {floor:6}).addTo(MetalOres)
+L.marker([2266.5, 1631.5], {floor:7}).addTo(MetalOres)
+L.marker([2251.5, 1585.5], {floor:6}).addTo(MetalOres)
+	
+L.marker([2238.5, 1613.5], {floor:6}).addTo(KalemyteOres)
+L.marker([2253.5, 1635.5], {floor:7}).addTo(KalemyteOres)
+
+L.marker([2269.5, 1636.5], {floor:7}).addTo(SteelOres)
+L.marker([2258.5, 1598.5], {floor:6}).addTo(SteelOres)
+L.marker([2235.5, 1596.5], {floor:7}).addTo(SteelOres)
+L.marker([2249.5, 1596.5], {floor:7}).addTo(SteelOres)
+
+*/
 	
   /* Extend control to be able to getActiveBaseLayer */
   L.Control.ActiveLayers = L.Control.Layers.extend({
@@ -971,7 +1061,7 @@ L.marker([2076.5, 1465.5], {floor:9}).addTo(SilverineOres)
 
   /*Ore helper*/
   $('.node_url').on('click', '#ore-helper', function () {
-    var x = ['IronOres', 'MetalOres', 'KalemyteOres', 'BrassOres', 'SteelOres', 'SilverineOres', 'TarniteOres', 'OrichalcumOres', 'QuimpOres', 'RubiniteOres'];
+    var x = ['IronOres', 'MetalOres', 'KalemyteOres', 'BrassOres', 'SteelOres', 'SilverineOres', 'TarniteOres', 'OrichalcumOres', 'QuimpOres', 'RubiniteOres', 'MordOres'];
     for (var i = 0; x.length > i; i++) {
       if ($(this).text() == x[i]) {
         if (typeof x[i + 1] == 'undefined') {
